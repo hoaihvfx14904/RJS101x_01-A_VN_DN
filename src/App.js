@@ -5,15 +5,13 @@ import Menu from './components/MenuComponent.js'
 import { Navbar, NavbarBrand } from 'reactstrap';
 import './App.css';
 import { render } from '@testing-library/react';
-import { COMMENTS } from './shared/comments';
 
 class App extends Component {
   
   constructor(props) {
     super(props);
     this.state = {
-      dishes: DISHES,
-      comments: COMMENTS,
+      dishes: DISHES
     }
   }
   render(){
@@ -24,8 +22,7 @@ class App extends Component {
           <NavbarBrand href='/'>Ristorante on Confusion</NavbarBrand>
         </div>
       </Navbar>
-      <Menu dishes={this.state.dishes} comment={this.state.comments}/>
-     
+      <Menu dishes={this.state.dishes}/>
     </div>
   );
   }

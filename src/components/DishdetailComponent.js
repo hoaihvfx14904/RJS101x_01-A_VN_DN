@@ -22,43 +22,42 @@ import dateFormat from 'dateformat';
             }else{
                 return <div></div>;
             }
-        }
-        
+        }  
          renderComment(comments){
             if(comments !=null){
-                console.log(this.props.dish.id);
-            const cmt = comments.map((comment) =>{
-                console.log(comment.dishId === this.props.dish.id);
-                if(comment.dishId === this.props.dish.id ){
-                    return (
-                        <div key={comment.id} className='col-12 col-md-5 m-1' >
-                        <p>{comment.comment}</p>
-                        <p>--{comment.author + " " + (dateFormat(comment.date, "dd,mm,yyyy"))}</p>
-                        </div>
-                    )
-                }
-               
-
-            });
-            return (
-                <div >
-                    <h4>Comment</h4>
-                    <p>{cmt}</p>
-                </div>
-            )
+                return (
+                    <div className="col-12 col-md-5 m-1">
+                        <h4>Comments</h4>
+                        <ul className="list-unstyled">
+                            <div>
+                                {comments.map((comment) => {
+                                    return (
+                                        <div key={comment.id}>
+                                            <li>
+                                            <p>{comment.comment}</p>
+                                            <p>-- {comment.author} , {dateFormat(comment.date, "dd,mm,yyyy")}</p>
+                                            </li>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </ul>
+                    </div>
+                        )
             } else {
                 return <div></div>;
             }
-        } 
+        }  
         render(){
-        return (
+        return (   
             <div className='container'>
                 <div >
                     {this.renderDish(this.props.dish)}
                 </div>
                 <div >
-                    {this.renderComment(this.props.comment)}
+                    {this.renderComment(this.props.dish.comments)}
                 </div>
+                
              
             </div>
         );

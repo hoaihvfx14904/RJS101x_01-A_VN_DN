@@ -24,7 +24,7 @@ class App extends Component {
           <NavbarBrand href='/'>Ristorante on Confusion</NavbarBrand>
         </div>
       </Navbar>
-      <Menu dishes={this.state.dishes} />
+      <Menu dishes={this.state.dishes} comment={this.state.comments}/>
      
     </div>
   );

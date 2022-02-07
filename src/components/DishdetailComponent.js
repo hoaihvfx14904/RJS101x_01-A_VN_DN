@@ -10,7 +10,7 @@ import dateFormat from 'dateformat';
             if(dish != null){
                
                 return (
-                    <Card className='col-12 col-md-5 ' >
+                    <Card width='100%'>
                         <CardImg width='100%' src={dish.image} alt={dish.name}></CardImg>
                         <CardBody>
                         <CardTitle>{dish.name}</CardTitle>
@@ -23,18 +23,20 @@ import dateFormat from 'dateformat';
                 return <div></div>;
             }
         }  
-         renderComment(comments){
-            if(comments !=null){
+         renderComment(dish){
+           
+            if(dish){
+                console.log('comments', dish);
                 return (
-                    <div className="col-12 col-md-5 m-1">
+                    <div >
                         <h4>Comments</h4>
                         <ul className="list-unstyled">
                             <div>
-                                {comments.map((comment) => {
+                                {dish.comments.map((comment) => {
                                     return (
                                         <div key={comment.id}>
                                             <li>
-                                            <p>{comment.comment}</p>
+                                            <p>test {comment.comment}</p>
                                             <p>-- {comment.author} , {dateFormat(comment.date, "dd,mm,yyyy")}</p>
                                             </li>
                                         </div>
@@ -50,13 +52,15 @@ import dateFormat from 'dateformat';
         }  
         render(){
         return (   
-            <div className='container'>
-                <div >
+            <div className='container mt-3'>
+               <div className='row'>
+               <div className='col-12 col-md-5 m-1'>
                     {this.renderDish(this.props.dish)}
                 </div>
-                <div >
-                    {this.renderComment(this.props.dish.comments)}
+                <div className='col-12 col-md-5 m-1'>
+                    { this.props.dish && this.renderComment(this.props.dish)}
                 </div>
+               </div>
                 
              
             </div>

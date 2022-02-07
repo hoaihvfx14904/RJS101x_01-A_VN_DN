@@ -1,10 +1,11 @@
 import logo from './logo.svg';
 import React, { Component} from 'react';
 import {DISHES} from './shared/dishes.js';
-import Menu from './components/MenuComponents.js'
+import Menu from './components/MenuComponent.js'
 import { Navbar, NavbarBrand } from 'reactstrap';
 import './App.css';
 import { render } from '@testing-library/react';
+import { COMMENTS } from './shared/comments';
 
 class App extends Component {
   
@@ -12,6 +13,7 @@ class App extends Component {
     super(props);
     this.state = {
       dishes: DISHES,
+      comments: COMMENTS,
     }
   }
   render(){
@@ -22,7 +24,7 @@ class App extends Component {
           <NavbarBrand href='/'>Ristorante on Confusion</NavbarBrand>
         </div>
       </Navbar>
-      <Menu dishes={this.state.dishes}/>
+      <Menu dishes={this.state.dishes} />
      
     </div>
   );

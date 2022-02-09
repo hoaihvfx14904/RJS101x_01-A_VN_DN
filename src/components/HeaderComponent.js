@@ -49,7 +49,7 @@ class Header extends Component{
                             </NavItem>
                         </Nav>
                         </Collapse>
-                       {/*  </NavbarToggler> */}
+                        {/* </NavbarToggler> */}
                     </div>
                 </Navbar>
                 <div className="jumbotron">

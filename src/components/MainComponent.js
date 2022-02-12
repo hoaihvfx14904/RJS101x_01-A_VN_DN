@@ -10,7 +10,17 @@ import Contact from './ContactComponent.js';
 import { COMMENTS } from '../shared/comments';
 import { PROMOTIONS } from '../shared/promotion';
 import { LEADERS } from '../shared/leaders';
-import {Switch, Route, Redirect} from 'react-router-dom'
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
+import { connect } from 'react-redux';
+
+const mapStateToProps = state => {
+  return {
+    dishes: state.dishes,
+    comments: state.comments,
+    promotions: state.promotions,
+    leaders: state.leaders
+  }
+}
 
 class Main extends Component {
   
@@ -42,6 +52,7 @@ class Main extends Component {
   return (
     <div className='App'>
       <Header />
+       <div>
          <Switch>
              <Route path='/home' component={HomePage} />
              <Route exact path='/menu' component={() => <Menu dishes={this.state.dishes} />} />
@@ -50,10 +61,11 @@ class Main extends Component {
             
              <Redirect to='/home' />
          </Switch>
+         </div>
       <Footer />
     </div>
   );
   }
 }
 
-export default Main;
+export default withRouter(connect(mapStateToProps)(Main));

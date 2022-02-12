@@ -25,13 +25,11 @@ class Contact extends Component {
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleBlur = this.handleBlur.bind(this);
     }
-    
     handleBlur = (field) => (evt) => {
         this.setState({
             touched: { ...this.state.touched, [field]: true }
         });
     }
-
     validate(firstname, lastname, telnum, email) {
         const errors = {
             firstname: '',

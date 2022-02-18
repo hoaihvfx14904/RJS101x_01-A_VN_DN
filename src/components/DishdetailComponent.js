@@ -6,11 +6,13 @@ import { Link } from 'react-router-dom';
 import { Control, LocalForm } from 'react-redux-form';
 import dateFormat from 'dateformat';
 import { Loading } from './LoadingComponent';
+import { baseUrl } from '../shared/baseUrl';
+
      function   RenderDish({dish}){
             if(dish != null){
                 return (
                     <Card width='100%'>
-                        <CardImg width='100%' src={dish.image} alt={dish.name}></CardImg>
+                         <CardImg top src={baseUrl + dish.image} alt={dish.name} />
                         <CardBody>
                         <CardTitle>{dish.name}</CardTitle>
                         <CardText>{dish.description}</CardText>
@@ -22,7 +24,8 @@ import { Loading } from './LoadingComponent';
                 return <div></div>;
             }
         }
-        function RenderComments({comments, addComment, dishId}) {
+
+    function RenderComments({comments, addComment, dishId}) {
             if (comments != null)
                 return(
                     <div >
@@ -150,7 +153,7 @@ import { Loading } from './LoadingComponent';
                         <RenderDish dish={props.dish} />
                     </div>
                     <div className="col-12 col-md-6 m-1">
-                    <RenderComments comments={props.comments}
+                    <RenderComments comments={props.comment}
                                     addComment={props.addComment}
                                     dishId={props.dish.id}
                     />

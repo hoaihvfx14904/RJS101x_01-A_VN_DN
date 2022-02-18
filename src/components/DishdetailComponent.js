@@ -25,7 +25,7 @@ import { baseUrl } from '../shared/baseUrl';
             }
         }
 
-    function RenderComments({comments, addComment, dishId}) {
+    function RenderComments({comments, postComment, dishId}) {
             if (comments != null)
                 return(
                     <div >
@@ -45,7 +45,7 @@ import { baseUrl } from '../shared/baseUrl';
                                 })}
                             </div>
                         </ul>
-                        <CommentForm dishId={dishId} addComment={addComment} />
+                        <CommentForm dishId={dishId} postComment={postComment} />
                     </div>
                 );
             else
@@ -75,7 +75,7 @@ import { baseUrl } from '../shared/baseUrl';
         
             handleSubmit(values) {
                 this.toggleModal();
-                this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
+                this.props.postComment(this.props.dishId, values.rating, values.author, values.comment);
             }
         
             render() {
@@ -96,6 +96,13 @@ import { baseUrl } from '../shared/baseUrl';
                                     <option>4</option>
                                     <option>5</option>
                                 </Control.select>
+                                </Col>
+                            </Row>
+                            <Row className="form-group">
+                                <Col>
+                                <Label htmlFor="author">Your Name</Label>
+                                <Control.textarea model=".author" id="author"
+                                            rows="2" className="form-control" />
                                 </Col>
                             </Row>
                             <Row className="form-group">
@@ -154,7 +161,7 @@ import { baseUrl } from '../shared/baseUrl';
                     </div>
                     <div className="col-12 col-md-6 m-1">
                     <RenderComments comments={props.comment}
-                                    addComment={props.addComment}
+                                    postComment={props.postComment}
                                     dishId={props.dish.id}
                     />
                     </div>

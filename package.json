@@ -1,0 +1,61 @@
+{
+  "name": "my-react-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "bootstrap": "^4.6.0",
+    "bootstrap-social": "^5.1.1",
+    "cjs-module": "^1.5.0",
+    "cross-fetch": "^3.1.5",
+    "dateformat": "^5.0.2",
+    "font-awesome": "^4.7.0",
+    "module": "^1.1.0",
+    "node": "^17.4.0",
+    "node-modules": "^0.0.1",
+    "proptypes": "^1.1.0",
+    "react": "^17.0.2",
+    "react-bootstrap": "^2.1.2",
+    "react-dom": "^16.4.0",
+    "react-popper": "^2.2.5",
+    "react-redux": "^5.1.2",
+    "react-redux-form": "^1.16.14",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "^5.0.0",
+    "reactstrap": "^9.0.1",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "source-map-loader": "^3.0.1",
+    "webpack-node-externals": "^3.0.0"
+  }
+}
